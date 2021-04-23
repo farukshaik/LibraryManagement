@@ -1,0 +1,34 @@
+<div class="button">
+<button type="button" class="btn btn-outline-success" (click) = onLogOut() style="float: right; margin-bottom: 15px;">Log Out</button>
+</div>
+
+<h5>Hello, {{this.getBooks.rollNumber }}</h5>
+<div class="table">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Trans. Id</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Issued Date</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Times Renewed</th>
+        <th scope="col">Renew</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of bookDetails">
+        <td>{{data.transId}}</td>
+        <td>{{data.bookEntity.isbn}}</td>
+        <td>{{data.bookEntity.bookName}}</td>
+        <td>{{data.issuedDate}}</td>
+        <td>{{data.estimatedDueDate}}</td>
+        <td>{{data.status}}</td>
+        <td>{{data.noOfRenewals}}</td>
+        <td><button type="button" class="btn btn-primary btn-sm" 
+          (click)="onRenew(data.transId)" [disabled] = "data.status === 'submitted'">Renew</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

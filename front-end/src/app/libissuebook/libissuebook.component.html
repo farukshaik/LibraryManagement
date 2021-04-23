@@ -1,0 +1,43 @@
+<!--
+<div class="form" >
+    <form #getdata=ngForm (ngSubmit)=onSubmit(rollNumber)>
+    <input type="text" class="form-control" style="width:30%; display: inline-block; margin-left: 280px; margin-top: 25px; margin-right: 20px;" id="exampleInput" aria-describedby="emailHelp" placeholder="Enter Student Id" name="rollNumber" [(ngModel)]=rollNumber>
+    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+    </form>
+    </div>
+  --> 
+    
+    <div *ngIf="continue === true" style="margin-top: 50px;">
+        <table class="table table-bordered">
+         <tr>
+           <th>Student Name</th>
+           <td>{{studentDetails.studentName}}</td>
+         </tr>
+         <tr>
+           <th>Roll Number</th>
+           <td>{{studentDetails.rollNo}}</td>
+         </tr>
+         <tr>
+           <th>Dept</th>
+           <td>{{studentDetails.dept}}</td>
+         </tr>
+         <tr>
+           <th>Email</th>
+           <td>{{studentDetails.email}}</td>
+         </tr>
+         <tr>
+           <th>Mobile</th>
+           <td>{{studentDetails.mobile}}</td>
+        </tr>
+        <tr>
+            <th>Rank</th>
+            <td>{{studentDetails.rank}} <button type="submit" class="btn btn-primary btn-sm" 
+              style="margin-left: 160px;" (click)="onUpdateRank(studentDetails.rollNo)" >Update Rank</button></td>
+        </tr>
+        </table>
+        
+        <button type="submit" class="btn btn-primary" (click)="onProceed()" 
+        [disabled] = "proceed === false">Proceed</button> 
+      </div>
+     
+     

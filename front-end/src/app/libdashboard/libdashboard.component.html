@@ -1,0 +1,25 @@
+<div class="button">
+        <button type="button" class="btn btn-outline-success" (click) = onLogOut() style="float: right; margin-bottom: 15px;">Log Out</button>
+        </div>
+    
+<div class="form" >
+        <form #getdata=ngForm>
+        <input type="text" class="form-control" style="width:100%; display: inline-block; margin-top: 25px; margin-right: 20px;" id="exampleInput" aria-describedby="emailHelp"
+         placeholder="Enter Student Id" name="rollNumber" [(ngModel)]=rollNumber>
+        </form>
+        </div>
+
+<div style="margin-left: 250px;">       
+<button type="submit" class="btn btn-primary" (click) = onSubmit(rollNumber)
+        style="margin-top: 100px; margin-left: 50px;" routerLink="/libissuebook">
+        Issue Book
+</button>
+
+
+<button type="submit" class="btn btn-primary" (click) = onRenewOrSubmit(rollNumber)
+        style="margin-top: 100px; margin-left: 50px" routerLink="/librenewbook">
+        Renew / Submit Book
+</button>
+
+</div>
+<router-outlet></router-outlet>

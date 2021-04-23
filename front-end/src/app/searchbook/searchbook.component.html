@@ -1,0 +1,34 @@
+
+<button type="button" class="btn btn-outline-success" style="float: right; margin-top: 50px; margin-right: 18px;" routerLink="/signin">Sign In</button>
+<button type="button" class="btn btn-outline-success" style="float: right;margin-right: 20px; margin-bottom: 10px; margin-top: 50px;" routerLink="/signup">Sign Up</button>
+
+<div class="container">
+  <form  #searchForm = "ngForm"  (ngSubmit)=onSubmit(bookName)>
+    <input class="form-control" type="search" placeholder="Search Book" aria-label="Search" name="bookName" [(ngModel)]="bookName">
+   <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  -->
+  </form>
+</div>
+
+<div *ngIf="continue === true">
+<table class="table table-striped">
+<thead>
+  <tr>
+  <th>Book Name</th>
+  <th>Author Name</th>
+  <th>ISBN</th>
+  <th>Status</th>
+  </tr>
+ </thead> 
+<tbody>
+<tr *ngFor="let data of bookDetails">
+  <td>{{data.bookName}}</td>
+  <td>{{data.authorName}}</td>
+  <td>{{data.isbn}}</td>
+  <td>{{data.status}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+  <router-outlet></router-outlet>

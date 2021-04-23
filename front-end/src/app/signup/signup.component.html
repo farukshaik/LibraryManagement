@@ -1,0 +1,38 @@
+
+
+<form #signupForm = "ngForm" (ngSubmit) = onSignup()>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" placeholder="Name" name="Name" [(ngModel)]="signupData.studentName">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="rollno">Registration Number</label>
+        <input type="text" class="form-control" id="rollno" placeholder="Roll No" name="rollNo" [(ngModel)]="signupData.rollNumber">
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" [(ngModel)]="signupData.password">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="department">Department</label>
+            <select id="dept" class="form-control" name="dept" [(ngModel)]="signupData.department">
+              <option selected>Choose...</option>
+              <option *ngFor="let st of departments"> {{st}}</option>
+            </select>
+          </div>
+      </div>
+
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email" [(ngModel)]="signupData.email">
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input type="text" class="form-control" id="mobile" placeholder="Mobile" name="mobile" [(ngModel)]="signupData.mobile">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>

@@ -1,0 +1,19 @@
+<div class="form">
+<form #librarysignin = "ngForm" (ngSubmit)="onSignIn(empId,password)">
+  <div [formGroup] ="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Employee Number</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+      placeholder="Enter employee id" name="empId" formControlName="empId">
+    </div>
+  </div>
+    <div class="form-group">
+      <div [formGroup] ="form">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" 
+      placeholder="Password" name="password" formControlName="password">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+  </form>
+  </div>

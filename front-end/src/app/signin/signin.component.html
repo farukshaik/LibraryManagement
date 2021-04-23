@@ -1,0 +1,25 @@
+
+<div class="sform">
+  <div *ngIf="verified === true">
+
+    <h1>Invalid credentials...!</h1>
+  </div>
+  <form #signin = "ngForm" (ngSubmit)="onSignIn(rollNo,password)">
+  <div [formGroup] ="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Registration Number</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter roll no" name="rollNo" formControlName="rollNo">
+    </div>
+  </div>
+
+  <div [formGroup] = "form">
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" formControlName="password">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+  </form>
+
+
+  </div>
